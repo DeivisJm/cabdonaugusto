@@ -1,0 +1,25 @@
+
+{
+  "Navigation": {
+    "home": "Inicio",
+    "cabins": "Cabañas",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "book": "Reservar"
+  },
+  "Home": {
+    "location": "San Isidro, Peñas Blancas, Costa Rica",
+    "title": "Cabañas Don Augusto",
+    "subtitle": "Un refugio entre el bosque y el río",
+    "description": "Descubre nuestras cabañas circulares rodeadas de naturaleza, junto a un río en San Isidro, Peñas Blancas.",
+    "explore": "Explorar cabañas",
+    "welcome": "Bienvenidos a nuestro refugio natural",
+    "welcomeDescription": "Un espacio donde la naturaleza, la tranquilidad y el descanso se encuentran.",
+    "cabinsTitle": "Nuestras cabañas",
+    "cabinsDescription": "Estamos preparando las fotografías y características de cada alojamiento."
+  },
+  "Footer": {
+    "rights": "Todos los derechos reservados.",
+    "location": "San Isidro, Peñas Blancas, Costa Rica"
+  }
+}
