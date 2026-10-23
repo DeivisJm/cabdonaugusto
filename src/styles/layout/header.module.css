@@ -1,0 +1,215 @@
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+
+  width: 100%;
+
+  background-color: var(--color-forest-dark);
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
+
+  color: var(--color-white);
+}
+
+/* ==========================================================
+   SHARED CONTAINER
+   ========================================================== */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  width: 100%;
+  max-width: var(--container-width);
+  min-height: var(--header-height);
+
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* ==========================================================
+   BRAND
+   ========================================================== */
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  gap: 0.875rem;
+
+  text-decoration: none;
+}
+
+.brandIcon {
+  display: grid;
+  place-items: center;
+
+  width: 3rem;
+  height: 3rem;
+
+  border: 1px solid var(--color-beige);
+  border-radius: var(--radius-md);
+
+  color: var(--color-beige);
+
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  color: var(--color-white);
+
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.brandCategory {
+  margin-top: 0.25rem;
+
+  color: var(--color-beige);
+
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+/* ==========================================================
+   DESKTOP NAVIGATION
+   ========================================================== */
+
+.desktopActions {
+  display: flex;
+  align-items: center;
+
+  gap: 2rem;
+}
+
+/* ==========================================================
+   MOBILE NAVIGATION
+   ========================================================== */
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .desktopActions {
+    display: none;
+  }
+
+  .mobileMenu {
+    position: relative;
+    display: block;
+  }
+
+  .menuTrigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.625rem;
+
+    padding: 0.75rem 1rem;
+
+    border: 1px solid rgb(255 255 255 / 35%);
+    border-radius: var(--radius-sm);
+
+    color: var(--color-white);
+
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    list-style: none;
+
+    transition:
+      border-color var(--transition-normal),
+      background-color var(--transition-normal);
+  }
+
+  .menuTrigger::-webkit-details-marker {
+    display: none;
+  }
+
+  .menuTrigger:hover {
+    border-color: var(--brand-active);
+    background-color: rgb(255 255 255 / 8%);
+  }
+
+  .menuIcon {
+    color: var(--brand-active);
+    font-size: 1.125rem;
+    line-height: 1;
+  }
+
+  .mobilePanel {
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: 0;
+    z-index: var(--z-dropdown);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    width: min(82vw, 320px);
+    padding: 1.5rem;
+
+    background-color: var(--color-forest-dark);
+
+    border: 1px solid rgb(255 255 255 / 15%);
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-medium);
+  }
+}
+
+/* ==========================================================
+   SMALL DEVICES
+   ========================================================== */
+
+@media (max-width: 480px) {
+  .container {
+    gap: 0.75rem;
+    padding-block: 0.75rem;
+  }
+
+  .brand {
+    gap: 0.625rem;
+  }
+
+  .brandIcon {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .brandName {
+    font-size: 1.125rem;
+  }
+
+  .brandCategory {
+    font-size: 0.5625rem;
+  }
+
+  .menuTrigger {
+    padding: 0.625rem 0.75rem;
+  }
+}

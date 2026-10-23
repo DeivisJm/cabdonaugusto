@@ -1,43 +1,68 @@
 
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
-export function Footer() {
+import { siteConfig } from "@/config/site";
+
+import { SiteNavigation } from "./site-navigation";
+
+import styles from "@/styles/layout/footer.module.css";
+
+/**
+ * Shared website footer.
+ *
+ * Reuses the same navigation component as the header
+ * to maintain consistent active-section behavior.
+ */
+export async function Footer() {
+  const t = await getTranslations("Footer");
+
   return (
-    <footer className="bg-[#102B1E] px-6 py-12 text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-3">
-        <div>
-          <h2 className="text-2xl font-bold">
-            Cabañas Don Augusto
-          </h2>
-          <p className="mt-4 text-sm leading-relaxed text-green-100">
-            Un espacio para conectar con la naturaleza,
-            descansar y disfrutar de la tranquilidad.
-          </p>
-        </div>
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {/* Brand information */}
+          <div className={styles.brandColumn}>
+            <h2 className={styles.brandName}>
+              {siteConfig.name}
+            </h2>
 
-        <div>
-          <h3 className="mb-4 font-semibold">Explorar</h3>
-          <div className="flex flex-col gap-3 text-sm text-green-100">
-            <Link href="#inicio">Inicio</Link>
-            <Link href="#cabanas">Cabañas</Link>
-            <Link href="#nosotros">Nosotros</Link>
-            <Link href="#contacto">Contacto</Link>
+            <p className={styles.description}>
+              {t("description")}
+            </p>
+          </div>
+
+          {/* Shared navigation */}
+          <div className={styles.navigationColumn}>
+            <h3 className={styles.heading}>
+              {t("explore")}
+            </h3>
+
+            <nav aria-label={t("footerNavigation")}>
+              <SiteNavigation variant="vertical" />
+            </nav>
+          </div>
+
+          {/* Property location */}
+          <div className={styles.locationColumn}>
+            <h3 className={styles.heading}>
+              {t("locationTitle")}
+            </h3>
+
+            <address className={styles.location}>
+              {t("location")}
+            </address>
           </div>
         </div>
 
-        <div>
-          <h3 className="mb-4 font-semibold">Ubicación</h3>
-          <p className="text-sm leading-relaxed text-green-100">
-            San Isidro, Peñas Blancas
-            <br />
-            Costa Rica
-          </p>
-        </div>
-      </div>
+        {/* Copyright information */}
+        <div className={styles.bottom}>
+          <span>
+            © {new Date().getFullYear()}{" "}
+            {siteConfig.name}.
+          </span>
 
-      <div className="mx-auto mt-12 max-w-7xl border-t border-white/15 pt-6 text-center text-sm text-green-200">
-        © {new Date().getFullYear()} Cabañas Don Augusto.
-        Todos los derechos reservados.
+          <span>{t("rights")}</span>
+        </div>
       </div>
     </footer>
   );

@@ -1,0 +1,191 @@
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.footer {
+  width: 100%;
+
+  background-color: var(--color-forest-dark);
+  color: var(--color-on-dark);
+}
+
+/* ==========================================================
+   CONTAINER
+   ========================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+
+  margin-inline: auto;
+  padding:
+    4.5rem
+    var(--container-padding)
+    2rem;
+}
+
+/* ==========================================================
+   GRID LAYOUT
+   ========================================================== */
+
+.content {
+  display: grid;
+
+  grid-template-columns: 1.5fr 1fr 1fr;
+
+  gap: 4rem;
+}
+
+/* ==========================================================
+   BRAND INFORMATION
+   ========================================================== */
+
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.brandName {
+  margin-bottom: 1.25rem;
+
+  color: var(--color-white);
+
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.description {
+  max-width: 340px;
+
+  color: rgb(247 245 239 / 80%);
+
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+/* ==========================================================
+   COLUMN HEADINGS
+   ========================================================== */
+
+.heading {
+  margin-bottom: 1.5rem;
+
+  color: var(--color-beige);
+
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* ==========================================================
+   NAVIGATION COLUMN
+   ========================================================== */
+
+.navigationColumn {
+  min-width: 0;
+}
+
+/*
+ * Navigation link colors and active underline
+ * are managed by site-navigation.module.css.
+ */
+
+/* ==========================================================
+   LOCATION
+   ========================================================== */
+
+.locationColumn {
+  min-width: 0;
+}
+
+.location {
+  color: rgb(247 245 239 / 80%);
+
+  font-size: 0.875rem;
+  font-style: normal;
+  line-height: 1.8;
+}
+
+/* ==========================================================
+   COPYRIGHT BAR
+   ========================================================== */
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1.5rem;
+
+  margin-top: 4rem;
+  padding-top: 1.75rem;
+
+  border-top: 1px solid rgb(255 255 255 / 20%);
+
+  color: rgb(247 245 239 / 70%);
+
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 3.5rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .brandColumn {
+    grid-column: 1 / -1;
+  }
+
+  .bottom {
+    margin-top: 3rem;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 480px) {
+  .container {
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .brandColumn {
+    grid-column: auto;
+  }
+
+  .brandName {
+    font-size: 1.5rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0.5rem;
+
+    margin-top: 3rem;
+  }
+}

@@ -1,32 +1,40 @@
 
 import type { Metadata } from "next";
 
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/home/hero";
 
+import { siteConfig } from "@/config/site";
+
+import styles from "@/styles/home/home.module.css";
+
 type HomePageProps = {
   params: Promise<{ locale: string }>;
 };
 
+/**
+ * Generates localized metadata for search engines
+ * and international visitors.
+ */
 export async function generateMetadata({
   params,
 }: HomePageProps): Promise<Metadata> {
   const { locale } = await params;
 
-  const descriptions = {
-    es: "Cabañas circulares rodeadas de naturaleza junto a un río en San Isidro, Peñas Blancas.",
-    en: "Unique round cabins surrounded by nature next to a river in San Isidro, Peñas Blancas.",
-  };
-
-  const description =
-    locale === "en" ? descriptions.en : descriptions.es;
+  const t = await getTranslations({
+    locale,
+    namespace: "Metadata",
+  });
 
   return {
-    title: "Cabañas Don Augusto",
-    description,
+    title: t("title"),
+    description: t("description"),
     alternates: {
       languages: {
         es: "/es",
@@ -36,6 +44,10 @@ export async function generateMetadata({
   };
 }
 
+/**
+ * Homepage sections are ordered consistently with
+ * the shared navigation configuration.
+ */
 export default async function HomePage({
   params,
 }: HomePageProps) {
@@ -45,6 +57,27 @@ export default async function HomePage({
 
   const t = await getTranslations("Home");
 
+  const experiences = [
+    {
+      id: "wildlife",
+      number: "01",
+      title: t("wildlifeTitle"),
+      description: t("wildlifeDescription"),
+    },
+    {
+      id: "privacy",
+      number: "02",
+      title: t("privacyTitle"),
+      description: t("privacyDescription"),
+    },
+    {
+      id: "river",
+      number: "03",
+      title: t("riverTitle"),
+      description: t("riverDescription"),
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -52,43 +85,143 @@ export default async function HomePage({
       <main>
         <Hero />
 
-        <section
-          id="about"
-          className="scroll-mt-24 bg-[#F7F5EF] px-6 py-24"
-        >
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold text-[#183D2C] md:text-4xl">
-              {t("welcome")}
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-stone-600">
-              {t("welcomeDescription")}
-            </p>
-          </div>
-        </section>
-
+        {/* Accommodation introduction */}
         <section
           id="cabins"
-          className="scroll-mt-24 px-6 py-24"
+          aria-labelledby="cabins-title"
+          className={styles.section}
         >
-          <div className="mx-auto max-w-5xl text-center">
-            <h2 className="text-3xl font-bold text-[#183D2C] md:text-4xl">
-              {t("cabinsTitle")}
-            </h2>
+          <div className={styles.container}>
+            <div className={styles.centered}>
+              <p className={styles.eyebrow}>
+                {t("cabinsLabel")}
+              </p>
 
-            <p className="mt-6 text-stone-600">
-              {t("cabinsDescription")}
-            </p>
+              <h2
+                id="cabins-title"
+                className={styles.heading}
+              >
+                {t("cabinsTitle")}
+              </h2>
+
+              <p className={styles.description}>
+                {t("cabinsDescription")}
+              </p>
+            </div>
+
+            <div className={styles.placeholder}>
+              <p>{t("cabinsPlaceholder")}</p>
+            </div>
           </div>
         </section>
 
+        {/* Nature and guest experience */}
+        <section
+          id="about"
+          aria-labelledby="about-title"
+          className={`${styles.section} ${styles.sectionAlt}`}
+        >
+          <div className={styles.container}>
+            <div className={styles.centered}>
+              <p className={styles.eyebrow}>
+                {t("aboutLabel")}
+              </p>
+
+              <h2
+                id="about-title"
+                className={styles.heading}
+              >
+                {t("aboutTitle")}
+              </h2>
+
+              <p className={styles.description}>
+                {t("aboutDescription")}
+              </p>
+            </div>
+
+            <div className={styles.experienceGrid}>
+              {experiences.map((experience) => (
+                <article
+                  key={experience.id}
+                  className={styles.experienceCard}
+                >
+                  <span
+                    aria-hidden="true"
+                    className={styles.experienceNumber}
+                  >
+                    {experience.number}
+                  </span>
+
+                  <h3 className={styles.experienceTitle}>
+                    {experience.title}
+                  </h3>
+
+                  <p className={styles.experienceDescription}>
+                    {experience.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Regional tourism connection */}
+        <section className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.regionPanel}>
+              <div className={styles.regionContent}>
+                <p className={styles.regionEyebrow}>
+                  {t("regionLabel")}
+                </p>
+
+                <h2 className={styles.regionTitle}>
+                  {t("regionTitle")}
+                </h2>
+
+                <p className={styles.regionDescription}>
+                  {t("regionDescription")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact and location */}
         <section
           id="contact"
-          className="scroll-mt-24 bg-[#F7F5EF] px-6 py-20 text-center"
+          aria-labelledby="contact-title"
+          className={`${styles.section} ${styles.sectionAlt}`}
         >
-          <p className="font-medium text-[#183D2C]">
-            {t("location")}
-          </p>
+          <div className={styles.centered}>
+            <p className={styles.eyebrow}>
+              {t("contactLabel")}
+            </p>
+
+            <h2
+              id="contact-title"
+              className={styles.heading}
+            >
+              {t("contactTitle")}
+            </h2>
+
+            <p className={styles.description}>
+              {t("contactDescription")}
+            </p>
+
+            <p className={styles.locationText}>
+              {t("location")}
+            </p>
+
+            <a
+              href={siteConfig.maps.searchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.mapLink}
+            >
+              {t("viewMap")}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </section>
       </main>
 

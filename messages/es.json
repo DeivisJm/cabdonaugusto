@@ -1,25 +1,57 @@
 
 {
+  "Metadata": {
+    "title": "Cabañas Don Augusto | Tu refugio natural en Costa Rica",
+    "description": "Descubre Cabañas Don Augusto en San Isidro, Peñas Blancas. Disfruta de naturaleza, privacidad, aves, bosque tropical y un río cercano en la región de La Fortuna."
+  },
   "Navigation": {
+    "mainNavigation": "Navegación principal",
     "home": "Inicio",
     "cabins": "Cabañas",
     "about": "Nosotros",
     "contact": "Contacto",
-    "book": "Reservar"
+    "menu": "Menú"
   },
   "Home": {
-    "location": "San Isidro, Peñas Blancas, Costa Rica",
+    "location": "San Isidro, Peñas Blancas · Costa Rica",
     "title": "Cabañas Don Augusto",
-    "subtitle": "Un refugio entre el bosque y el río",
-    "description": "Descubre nuestras cabañas circulares rodeadas de naturaleza, junto a un río en San Isidro, Peñas Blancas.",
-    "explore": "Explorar cabañas",
-    "welcome": "Bienvenidos a nuestro refugio natural",
-    "welcomeDescription": "Un espacio donde la naturaleza, la tranquilidad y el descanso se encuentran.",
-    "cabinsTitle": "Nuestras cabañas",
-    "cabinsDescription": "Estamos preparando las fotografías y características de cada alojamiento."
+    "subtitle": "Tu refugio natural cerca de La Fortuna.",
+    "description": "Despierta con el canto de las aves, respira la frescura del bosque y disfruta de la paz y privacidad que mereces. Un rincón rodeado de naturaleza y un río cercano, donde cada momento invita a desconectarte.",
+    "book": "Reservar",
+
+    "cabinsLabel": "Tu refugio natural",
+    "cabinsTitle": "Un lugar para vivir momentos especiales",
+    "cabinsDescription": "Descubre nuestras tres cabañas rodeadas de vegetación tropical, creadas para disfrutar del descanso y la tranquilidad en contacto con la naturaleza.",
+    "cabinsPlaceholder": "Próximamente podrás explorar las fotografías, características y servicios de cada cabaña.",
+
+    "aboutLabel": "Vive la experiencia",
+    "aboutTitle": "Desconéctate del ruido. Conecta con la naturaleza.",
+    "aboutDescription": "Aquí, la tranquilidad del bosque marca el ritmo de tus días. Disfruta de un entorno natural donde podrás descansar, escuchar las aves y descubrir la belleza de la vida silvestre.",
+
+    "wildlifeTitle": "Naturaleza viva",
+    "wildlifeDescription": "Escucha el canto de las aves y disfruta de la posibilidad de observar fauna silvestre en su entorno natural.",
+
+    "privacyTitle": "Paz y privacidad",
+    "privacyDescription": "Encuentra un espacio para descansar, compartir momentos especiales y alejarte del ritmo de la vida cotidiana.",
+
+    "riverTitle": "Un río cercano",
+    "riverDescription": "Descubre un entorno rodeado de vegetación y la belleza natural de un río cercano a nuestras cabañas.",
+
+    "regionLabel": "Descubre nuestra región",
+    "regionTitle": "Una experiencia natural en el corazón de Costa Rica",
+    "regionDescription": "Haz de Cabañas Don Augusto el destino de tu viaje. Disfruta de la tranquilidad del bosque y aprovecha tu estadía para descubrir los atractivos turísticos de La Fortuna y la región del Arenal.",
+
+    "contactLabel": "Encuéntranos",
+    "contactTitle": "Tu próxima experiencia comienza aquí",
+    "contactDescription": "Te esperamos en Cabañas Don Augusto para disfrutar de naturaleza, tranquilidad y momentos inolvidables. Consulta nuestra ubicación y comienza a planear tu visita.",
+    "viewMap": "Ver ubicación en Google Maps"
   },
   "Footer": {
-    "rights": "Todos los derechos reservados.",
-    "location": "San Isidro, Peñas Blancas, Costa Rica"
+    "description": "Un refugio rodeado de naturaleza, ideal para disfrutar de la tranquilidad, la privacidad y la belleza del bosque tropical.",
+    "explore": "Explorar",
+    "footerNavigation": "Enlaces del pie de página",
+    "locationTitle": "Ubicación",
+    "location": "San Isidro, Peñas Blancas, San Ramón, Alajuela, Costa Rica",
+    "rights": "Todos los derechos reservados."
   }
 }

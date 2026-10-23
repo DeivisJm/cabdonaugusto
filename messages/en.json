@@ -1,25 +1,57 @@
 
 {
+  "Metadata": {
+    "title": "Cabañas Don Augusto | Your Nature Retreat in Costa Rica",
+    "description": "Discover Cabañas Don Augusto in San Isidro, Peñas Blancas. Enjoy privacy, birdsong, tropical forest, and a nearby river in the La Fortuna region."
+  },
   "Navigation": {
+    "mainNavigation": "Main navigation",
     "home": "Home",
     "cabins": "Cabins",
     "about": "About us",
     "contact": "Contact",
-    "book": "Book now"
+    "menu": "Menu"
   },
   "Home": {
-    "location": "San Isidro, Peñas Blancas, Costa Rica",
+    "location": "San Isidro, Peñas Blancas · Costa Rica",
     "title": "Cabañas Don Augusto",
-    "subtitle": "A retreat between the forest and the river",
-    "description": "Discover our unique round cabins surrounded by nature, next to a river in San Isidro, Peñas Blancas.",
-    "explore": "Explore our cabins",
-    "welcome": "Welcome to our nature retreat",
-    "welcomeDescription": "A place where nature, tranquility, and relaxation come together.",
-    "cabinsTitle": "Our cabins",
-    "cabinsDescription": "We are preparing the photos and details of each accommodation."
+    "subtitle": "Your peaceful nature retreat near La Fortuna.",
+    "description": "Wake up to birdsong, breathe in the fresh forest air, and enjoy the peace and privacy you deserve. Surrounded by lush greenery and a nearby river, this is your place to slow down and reconnect with nature.",
+    "book": "Book now",
+
+    "cabinsLabel": "Your nature retreat",
+    "cabinsTitle": "A place to create lasting memories",
+    "cabinsDescription": "Discover our three cabins surrounded by tropical greenery, where relaxation and a close connection with nature are part of the experience.",
+    "cabinsPlaceholder": "Explore photos, amenities, and details about each cabin soon.",
+
+    "aboutLabel": "The experience",
+    "aboutTitle": "Disconnect from the noise. Reconnect with nature.",
+    "aboutDescription": "Here, the peaceful rhythm of the forest sets the pace for your stay. Relax, listen to birdsong, and discover the beauty of Costa Rica's wildlife.",
+
+    "wildlifeTitle": "Nature all around",
+    "wildlifeDescription": "Listen to the birds and enjoy opportunities to spot wildlife in its natural habitat.",
+
+    "privacyTitle": "Peace and privacy",
+    "privacyDescription": "Find your own space to unwind, share special moments, and escape the rush of everyday life.",
+
+    "riverTitle": "A nearby river",
+    "riverDescription": "Experience lush tropical surroundings and the natural beauty of a river near our cabins.",
+
+    "regionLabel": "Discover the region",
+    "regionTitle": "An unforgettable nature experience in Costa Rica",
+    "regionDescription": "Make Cabañas Don Augusto the destination of your trip. Enjoy the peaceful forest surroundings and discover the attractions of La Fortuna and the Arenal region during your stay.",
+
+    "contactLabel": "Find us",
+    "contactTitle": "Your next experience starts here",
+    "contactDescription": "We welcome you to Cabañas Don Augusto for peaceful moments surrounded by nature. Explore our location and start planning your visit.",
+    "viewMap": "View location on Google Maps"
   },
   "Footer": {
-    "rights": "All rights reserved.",
-    "location": "San Isidro, Peñas Blancas, Costa Rica"
+    "description": "A peaceful nature retreat where privacy, relaxation, and the beauty of the tropical forest come together.",
+    "explore": "Explore",
+    "footerNavigation": "Footer navigation",
+    "locationTitle": "Location",
+    "location": "San Isidro, Peñas Blancas, San Ramón, Alajuela, Costa Rica",
+    "rights": "All rights reserved."
   }
 }

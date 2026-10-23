@@ -1,0 +1,72 @@
+
+/* ==========================================================
+   REUSABLE BUTTON LINK COMPONENT
+   ========================================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.75rem;
+
+  min-height: 3.25rem;
+
+  padding:
+    0.875rem
+    2rem;
+
+  background-color: var(--brand-primary);
+
+  border:
+    1px solid var(--brand-primary);
+
+  border-radius: var(--radius-pill);
+
+  color: var(--color-white);
+
+  font-family: var(--font-body);
+
+  font-size: 0.9375rem;
+  font-weight: 600;
+
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+/* Hover interaction */
+
+.button:hover {
+  background-color: var(--brand-primary-hover);
+
+  border-color: var(--brand-primary-hover);
+
+  transform: translateY(-2px);
+}
+
+/* Focus state */
+
+.button:focus-visible {
+  outline: 2px solid var(--color-beige);
+  outline-offset: 4px;
+}
+
+/* ==========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================== */
+
+@media (max-width: 480px) {
+  .button {
+    width: 100%;
+
+    padding-inline: 1.5rem;
+  }
+}

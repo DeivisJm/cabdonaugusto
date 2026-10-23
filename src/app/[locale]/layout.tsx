@@ -1,6 +1,7 @@
-import "../globals.css";
+
 import type { ReactNode } from "react";
 
+import { Inter, Playfair_Display } from "next/font/google";
 import {
   hasLocale,
   NextIntlClientProvider,
@@ -13,7 +14,19 @@ import { notFound } from "next/navigation";
 
 import { routing } from "@/i18n/routing";
 
-import "../globals.css";
+import "@/styles/globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 
 type LocaleLayoutProps = {
   children: ReactNode;
@@ -21,9 +34,17 @@ type LocaleLayoutProps = {
 };
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({
+    locale,
+  }));
 }
 
+/**
+ * Root layout for localized routes.
+ *
+ * Loads global styles, typography, and translation
+ * messages for the requested locale.
+ */
 export default async function LocaleLayout({
   children,
   params,
@@ -34,14 +55,13 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  // Make the active locale available during static rendering.
   setRequestLocale(locale);
 
   const messages = await getMessages();
 
   return (
     <html lang={locale}>
-      <body>
+      <body className={`${inter.variable} ${playfair.variable}`}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

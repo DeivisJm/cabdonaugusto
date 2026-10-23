@@ -1,0 +1,63 @@
+
+/* ==========================================================
+   CABANAS DON AUGUSTO
+   GLOBAL DESIGN TOKENS
+   ========================================================== */
+
+:root {
+  /* Forest brand palette */
+  --color-forest: #183d2c;
+  --color-forest-dark: #102b1e;
+  --color-forest-soft: #345944;
+
+  /* Mahogany brand palette */
+  --brand-primary: #75452e;
+  --brand-primary-hover: #4e2b1d;
+  --brand-primary-light: #94664e;
+  --brand-active: #d7a17f;
+
+  /* Neutral colors */
+  --color-beige: #e8cfb9;
+  --color-cream: #f7f5ef;
+  --color-sage: #78917b;
+  --color-wood: #956f4b;
+
+  /* Semantic colors */
+  --color-background: var(--color-cream);
+  --color-surface: #ffffff;
+  --color-surface-muted: #eee9e2;
+  --color-text: #30241e;
+  --color-text-muted: #675c55;
+  --color-border: #ded5cb;
+  --color-white: #ffffff;
+  --color-on-dark: #f7f5ef;
+
+  /* Typography */
+  --font-body: var(--font-inter), Arial, sans-serif;
+  --font-heading: var(--font-playfair), Georgia, serif;
+
+  /* Shared layout */
+  --container-width: 1280px;
+  --container-padding: clamp(1.25rem, 4vw, 3rem);
+  --section-spacing: clamp(4rem, 7vw, 7rem);
+  --header-height: 5.5rem;
+
+  /* Border radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.5rem;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* Shadows */
+  --shadow-soft: 0 8px 28px rgb(16 43 30 / 8%);
+  --shadow-medium: 0 12px 36px rgb(16 43 30 / 14%);
+
+  /* Layering */
+  --z-header: 50;
+  --z-dropdown: 60;
+}

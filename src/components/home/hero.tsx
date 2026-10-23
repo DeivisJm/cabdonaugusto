@@ -1,40 +1,80 @@
 
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
-import { Link } from "@/i18n/navigation";
+import { ButtonLink } from "@/components/ui/button-link";
+import { siteConfig } from "@/config/site";
 
+import styles from "@/styles/home/hero.module.css";
+
+/**
+ * Main landing section.
+ *
+ * Presents the accommodation as a nature destination
+ * through real photography and localized marketing copy.
+ *
+ * This Server Component avoids unnecessary client-side
+ * JavaScript and reuses the shared booking button.
+ */
 export async function Hero() {
   const t = await getTranslations("Home");
 
   return (
     <section
       id="home"
-      className="relative flex min-h-[75vh] items-center bg-gradient-to-br from-[#102B1E] via-[#183D2C] to-[#52734D] px-6 py-24 text-white"
+      aria-labelledby="hero-title"
+      className={styles.hero}
     >
-      <div className="mx-auto w-full max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="mb-6 text-sm font-semibold uppercase tracking-widest text-[#D7B47C]">
+      {/* Optimized property photograph */}
+      <Image
+        src={siteConfig.images.hero}
+        alt=""
+        fill
+        priority
+        quality={85}
+        sizes="100vw"
+        className={styles.background}
+      />
+
+      {/* Forest-colored contrast overlay */}
+      <div
+        aria-hidden="true"
+        className={styles.overlay}
+      />
+
+      {/* Main content */}
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <p className={styles.location}>
+            <span
+              aria-hidden="true"
+              className={styles.locationLine}
+            />
+
             {t("location")}
           </p>
 
-          <h1 className="text-5xl font-bold leading-tight md:text-7xl">
+          <h1
+            id="hero-title"
+            className={styles.title}
+          >
             {t("title")}
           </h1>
 
-          <p className="mt-6 text-2xl font-medium text-[#D7B47C]">
+          <p className={styles.subtitle}>
             {t("subtitle")}
           </p>
 
-          <p className="mt-6 max-w-xl text-lg leading-8 text-green-50">
+          <p className={styles.description}>
             {t("description")}
           </p>
 
-          <Link
-            href="/#cabins"
-            className="mt-10 inline-flex rounded-full bg-[#D7B47C] px-8 py-4 font-semibold text-[#183D2C] transition hover:bg-[#E9C995]"
-          >
-            {t("explore")}
-          </Link>
+          {/* Single primary booking action */}
+          <div className={styles.actions}>
+            <ButtonLink href="/#contact">
+              {t("book")}
+            </ButtonLink>
+          </div>
         </div>
       </div>
     </section>

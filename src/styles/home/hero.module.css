@@ -1,0 +1,206 @@
+
+/* ==========================================================
+   HOME HERO
+   CABANAS DON AUGUSTO
+   ========================================================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+
+  min-height: min(850px, 88svh);
+  overflow: hidden;
+
+  background-color: var(--color-forest-dark);
+  color: var(--color-white);
+}
+
+/* ==========================================================
+   BACKGROUND IMAGE
+   ========================================================== */
+
+.background {
+  object-fit: cover;
+  object-position: center 48%;
+}
+
+/* ==========================================================
+   FOREST OVERLAY
+   ========================================================== */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgb(7 27 18 / 91%) 0%,
+    rgb(16 43 30 / 65%) 45%,
+    rgb(16 43 30 / 12%) 100%
+  );
+}
+
+/* ==========================================================
+   CONTENT LAYOUT
+   ========================================================== */
+
+.container {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: var(--container-width);
+
+  margin-inline: auto;
+  padding: 6rem var(--container-padding);
+}
+
+.content {
+  max-width: 700px;
+}
+
+/* ==========================================================
+   LOCATION LABEL
+   ========================================================== */
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+
+  margin-bottom: 1.75rem;
+
+  color: var(--color-beige);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.locationLine {
+  flex-shrink: 0;
+
+  width: 2rem;
+  height: 1px;
+
+  background-color: var(--color-beige);
+}
+
+/* ==========================================================
+   TYPOGRAPHY
+   ========================================================== */
+
+.title {
+  margin: 0;
+
+  color: var(--color-white);
+  font-family: var(--font-heading);
+
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+.subtitle {
+  max-width: 650px;
+  margin-top: 1.75rem;
+
+  color: var(--color-beige);
+  font-family: var(--font-heading);
+
+  font-size: clamp(1.45rem, 2.3vw, 2.1rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.description {
+  max-width: 560px;
+  margin-top: 1.5rem;
+
+  color: rgb(255 255 255 / 92%);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+/* ==========================================================
+   PRIMARY ACTION
+   ========================================================== */
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  margin-top: 2.5rem;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 78svh;
+  }
+
+  .background {
+    object-position: 58% center;
+  }
+
+  .overlay {
+    background: linear-gradient(
+      90deg,
+      rgb(7 27 18 / 92%) 0%,
+      rgb(16 43 30 / 66%) 100%
+    );
+  }
+
+  .container {
+    padding-block: 5rem;
+  }
+
+  .title {
+    font-size: clamp(2.75rem, 9vw, 4rem);
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 75svh;
+  }
+
+  .container {
+    padding-block: 4rem;
+  }
+
+  .location {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+  }
+
+  .subtitle {
+    margin-top: 1.5rem;
+  }
+
+  .description {
+    margin-top: 1.25rem;
+  }
+
+  .actions {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}

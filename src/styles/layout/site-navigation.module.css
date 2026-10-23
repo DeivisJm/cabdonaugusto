@@ -1,0 +1,152 @@
+
+/* ==========================================================
+   SHARED SITE NAVIGATION
+   CABANAS DON AUGUSTO
+   ========================================================== */
+
+.horizontal {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.125rem;
+}
+
+/* ==========================================================
+   NAVIGATION LINKS
+   ========================================================== */
+
+.link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding-block: 0.5rem;
+
+  color: rgb(255 255 255 / 88%);
+
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+
+  transition:
+    color var(--transition-normal);
+}
+
+/* ==========================================================
+   LINK UNDERLINE
+   ========================================================== */
+
+.link::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 2px;
+
+  background-color: var(--brand-active);
+  border-radius: var(--radius-pill);
+
+  content: "";
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition:
+    transform var(--transition-normal);
+}
+
+/* ==========================================================
+   CURRENT SECTION
+   ========================================================== */
+
+.active {
+  color: var(--brand-active);
+  font-weight: 600;
+}
+
+.active::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================
+   HOVER AND KEYBOARD FOCUS
+   ========================================================== */
+
+.link:hover,
+.link:focus-visible {
+  color: var(--brand-active);
+}
+
+.link:hover::after,
+.link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/*
+ * Temporarily hide the active indicator when another
+ * navigation link receives pointer hover or keyboard focus.
+ *
+ * Restore the original active indicator automatically
+ * when the interaction ends.
+ */
+
+.horizontal:has(.link:hover)
+  .active:not(:hover),
+.vertical:has(.link:hover)
+  .active:not(:hover) {
+  color: rgb(255 255 255 / 88%);
+  font-weight: 500;
+}
+
+.horizontal:has(.link:hover)
+  .active:not(:hover)::after,
+.vertical:has(.link:hover)
+  .active:not(:hover)::after {
+  transform: scaleX(0);
+}
+
+.horizontal:has(.link:focus-visible)
+  .active:not(:focus-visible):not(:hover),
+.vertical:has(.link:focus-visible)
+  .active:not(:focus-visible):not(:hover) {
+  color: rgb(255 255 255 / 88%);
+  font-weight: 500;
+}
+
+.horizontal:has(.link:focus-visible)
+  .active:not(:focus-visible):not(:hover)::after,
+.vertical:has(.link:focus-visible)
+  .active:not(:focus-visible):not(:hover)::after {
+  transform: scaleX(0);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 900px) {
+  .horizontal {
+    gap: 1.125rem;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .link,
+  .link::after {
+    transition: none;
+  }
+}
